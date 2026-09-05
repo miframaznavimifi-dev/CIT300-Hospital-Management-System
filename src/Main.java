@@ -57,5 +57,28 @@ public class Main {
 
         System.out.println("\n--- Treatment Records After Pop ---");
         stack.display();
+                System.out.println("\n=== Patient Visit History Test ===");
+        VisitLinkedList visitHistory = new VisitLinkedList();
+
+        visitHistory.addVisit(new Visit(1, "2025-01-10", "Dr. Perera", "Common Cold", "Rest and fluids"));
+        visitHistory.addVisit(new Visit(2, "2025-03-22", "Dr. Fernando", "Fracture", "Cast applied"));
+        visitHistory.addVisit(new Visit(3, "2025-06-15", "Dr. Silva", "Fever", "Antibiotics prescribed"));
+
+        System.out.println("\n--- Full Visit History ---");
+        visitHistory.display();
+
+        System.out.println("\n--- Search Visit ID 2 ---");
+        Visit foundVisit = visitHistory.searchVisit(2);
+        if (foundVisit != null) {
+            foundVisit.display();
+        } else {
+            System.out.println("Visit not found.");
+        }
+
+        System.out.println("\n--- Removing Visit ID 1 ---");
+        visitHistory.removeVisit(1);
+
+        System.out.println("\n--- Visit History After Removal ---");
+        visitHistory.display();
     }
 }
