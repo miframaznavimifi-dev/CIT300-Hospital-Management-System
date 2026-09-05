@@ -41,5 +41,21 @@ public class Main {
 
         System.out.println("\n--- Waiting Patients After Dequeue ---");
         queue.display();
+
+                System.out.println("\n=== Treatment History Stack Test ===");
+        TreatmentStack stack = new TreatmentStack();
+
+        stack.push(new Patient(301, "Ishara Gunasekara", 35, "0744444444", "Minor Burn"));
+        stack.push(new Patient(302, "Dilani Rathnayake", 29, "0755555555", "Sprained Ankle"));
+        stack.push(new Patient(303, "Nuwan Perera", 50, "0766666666", "Migraine"));
+
+        System.out.println("\n--- Treatment Records ---");
+        stack.display();
+
+        System.out.println("\n--- Removing most recent treatment record ---");
+        stack.pop();
+
+        System.out.println("\n--- Treatment Records After Pop ---");
+        stack.display();
     }
 }
