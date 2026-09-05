@@ -25,5 +25,21 @@ public class Main {
 
         System.out.println("=== All Patients After Deletion ===");
         bst.inorderTraversal();
+     
+                System.out.println("\n=== Emergency Queue Test ===");
+        EmergencyQueue queue = new EmergencyQueue();
+
+        queue.enqueue(new Patient(201, "Sunil Bandara", 30, "0711111111", "Broken Arm"));
+        queue.enqueue(new Patient(202, "Priya Kumar", 25, "0722222222", "High Fever"));
+        queue.enqueue(new Patient(203, "Chamara Silva", 40, "0733333333", "Stomach Pain"));
+
+        System.out.println("\n--- Waiting Patients ---");
+        queue.display();
+
+        System.out.println("\n--- Treating next patient ---");
+        queue.dequeue();
+
+        System.out.println("\n--- Waiting Patients After Dequeue ---");
+        queue.display();
     }
 }
